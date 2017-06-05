@@ -1,4 +1,4 @@
-# auto-size
+# tabs
 
 
 ## Usage it in your code
