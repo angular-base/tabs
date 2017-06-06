@@ -1,8 +1,44 @@
-.tab {
-  display: none;
+// Dependencies
+@import '../../../../node_modules/sassy-lists/dist/SassyLists';
 
+// Utilities
+@import '../../../../node_modules/scss-base/scss/utilities/utilities';
+
+// Settings
+@import '../../../settings';
+
+/// Padding for tab content.
+///
+/// @type Number | List
+$tab-content-padding: $base-margin !default;
+
+/// @todo Documentation needed...
+@mixin tab-base (
+  $padding: $tab-content-padding
+) {
+  display: none;
+  padding: $padding;
+
+  // Visible state
   &.is-visible {
     display: block;
   }
+
+  // Remove margin from the first- and last-child.
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
+/// @todo Documentation needed...
+@mixin base-tab {
+  .tab {
+    @include tab-base;
+  }
+}
+
+@include base-tab;
