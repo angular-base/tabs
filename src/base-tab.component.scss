@@ -1,44 +1,15 @@
 // Dependencies
-@import '../../../../node_modules/sassy-lists/dist/SassyLists';
+@import '../node_modules/sassy-lists/stylesheets/functions/first';
+@import '../node_modules/sassy-lists/stylesheets/functions/is-empty';
 
 // Utilities
-@import '../../../../node_modules/scss-base/scss/utilities/utilities';
+@import '../node_modules/scss-base-sites/src/utilities/utilities';
 
 // Settings
-@import '../../../settings';
+// import your own `settings` here
 
-/// Padding for tab content.
-///
-/// @type Number | List
-$tab-content-padding: $base-margin !default;
-
-/// @todo Documentation needed...
-@mixin tab-base (
-  $padding: $tab-content-padding
-) {
-  display: none;
-  padding: $padding;
-
-  // Visible state
-  &.is-visible {
-    display: block;
-  }
-
-  // Remove margin from the first- and last-child.
-  > :first-child {
-    margin-top: 0;
-  }
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-}
-
-/// @todo Documentation needed...
-@mixin base-tab {
-  .tab {
-    @include tab-base;
-  }
-}
+// Components
+@import '../node_modules/scss-base-sites/src/base/base';
+@import '../node_modules/scss-base-sites/src/components/tabs';
 
 @include base-tab;

@@ -1,4 +1,4 @@
-import { Component, ContentChildren, QueryList } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { BaseTabComponent } from "./base-tab.component";
 
 @Component({
@@ -8,6 +8,7 @@ import { BaseTabComponent } from "./base-tab.component";
 })
 export class BaseTabsComponent {
 
+  @Input() direction: string;
   @ContentChildren(BaseTabComponent) tabs: QueryList<BaseTabComponent>;
 
   ngAfterContentInit() {
